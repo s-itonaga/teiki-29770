@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-root to "tenpo#index"
+  get 'tenpo/index'
+root to: "tenpo#index"
 end
