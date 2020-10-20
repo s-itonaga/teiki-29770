@@ -34,6 +34,11 @@ Things you may want to cover:
 | tenpo_id2 | integer | null: false |
 | password2 | integer | null: false |
 
+### Association
+
+- has_many :kokyaku
+- has_many :nyuka
+
 ## kokyaku テーブル
 
 | Column         | Type       | Options                        |
@@ -45,6 +50,11 @@ Things you may want to cover:
 | note2          | string     |                                |
 | tenpo_id       | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :tenpo
+- has_one    :torioki
+
 ## torioki テーブル
 
 | Column   | Type       | Options                        |
@@ -53,6 +63,10 @@ Things you may want to cover:
 | z_code   | integer    | null: false                    |
 | num      | integer    | null: false                    |
 | kyaku_id | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :kokyaku
 
 ## nyuka テーブル
 
@@ -77,3 +91,7 @@ Things you may want to cover:
 | bundles       | integer    | null: false                    |
 | fraction      | integer    | null: false                    |
 | tenpo_id      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :tenpo
